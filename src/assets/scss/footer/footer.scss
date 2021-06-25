@@ -1,0 +1,179 @@
+@mixin flex-box($justify-content, $align-items) {
+    display: flex;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+
+.footer {
+    background-color: var(--primary-color);
+    margin-top: -154px;
+    padding: 0px 0px 20px 0px;
+    &-wrap {
+        padding: 80px 16px 40px 16px !important;
+    }
+    &__item {
+        h3 {
+            font-size: 1.8rem;
+            color: var(--white-color);
+        }
+        p {
+            font-size: 1.4rem;
+            margin-top: 20px;
+            color: var(--border-color);
+            padding-right: 90px;
+        }
+        ul {
+            padding-left: 0px;
+            list-style: none;
+            li {
+                a {
+                    text-decoration: none;
+                }
+            }
+        }
+        &.first {
+            ul {
+                display: flex;
+                a {
+                    margin-right: 20px;
+                    font-size: 1.4rem;
+                    color: var(--text-color);
+                }
+            }
+        }
+        &.second,
+        &.third {
+            ul {
+                margin-top: 10px;
+                a {
+                    display: block;
+                    padding: 5px 0px;
+                    font-size: 1.4rem;
+                    color: var(--text-color);
+                }
+            }
+        }
+        &.fourth {
+            ul {
+                display: flex;
+                justify-content: flex-end;
+                i {
+                    font-size: 1.6rem;
+                    padding: 10px;
+                    color: var(--white-color);
+                }
+            }
+            img {
+                margin-top: 78px;
+                float: right;
+            }
+        }
+    }
+
+    .contact {
+        @include flex-box(center, center);
+        height: 500px;
+        width: 100%;
+        flex-direction: column;
+        position: relative;
+        background-image: url("~@/assets/images/background-contact.png");
+        background-repeat: repeat;
+        z-index: 0;
+        &--wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+        h2 {
+            font-size: 2.6rem;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 50px;
+        }
+        p {
+            width: 720px;
+            font-size: 1.4rem;
+            line-height: 2.6rem;
+            text-align: center;
+            color: var(--border-color);
+            margin-top: 15px;
+        }
+        &__input {
+            @include flex-box(center, center);
+            width: 500px;
+            background-color: var(--white-color);
+            padding: 0px 20px;
+            margin-top: 30px;
+            border-radius: 30px;
+            box-shadow: 0px 0px 17px 5px rgb(0 0 0 / 5%);
+            input {
+                flex: 1;
+                padding: 19px;
+                font-size: 1.8rem;
+                border: none;
+                outline: none;
+                color: var(--border-color);
+            }
+            i {
+                font-size: 1.8rem;
+                color: blue;
+            }
+        }
+    }
+}
+
+/* Responsive */
+
+/* On Latop */
+@media only screen and (max-width: 1200px) {
+    .footer {
+        &__item {
+            p {
+                padding-right: 40px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 959px) {
+    .footer {
+        &__item.fourth {
+            float: left;
+            ul {
+                margin-left: -9px;
+            }
+            img {
+                margin-top: 20px;
+                float: left;
+            }
+        }
+    }
+    .hide-on-tablab {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .footer {
+        .contact {
+            &--wrap {
+                h2 {
+                    font-size: 2.2rem;
+                    margin-top: 80px;
+                }
+            }
+            &__input {
+                width: 300px;
+                margin-top: 0px;
+                input {
+                    width: 200px;
+                }
+            }
+            p {
+                width: 100%;
+                padding: 0px 12px;
+            }
+        }
+    }
+}

@@ -1,0 +1,124 @@
+:root {
+    --white-color: #fff;
+    --text-color: #dbdbdb;
+    --black-color: #000;
+    --border-color: #646262;
+    --primary-color: #444755;
+    --primary-main-color: #2d00ff;
+}
+
+/* font chữ cho cả trang */
+
+* {
+    box-sizing: inherit;
+    font-family: "Times New Roman", Times, serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* cỡ chữ cho cả trang */
+
+html {
+    line-height: 1.5rem;
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1500px !important;
+    margin: 0 auto;
+    &.main {
+        position: relative;
+        top: -75px;
+        z-index: 2;
+        background-color: var(--white-color);
+        box-shadow: 1px 3px 27px -10px #000000;
+        padding: 0px;
+    }
+}
+
+/* Border */
+
+.b-l {
+    border-left: 1px solid;
+    border-color: rgba(100, 98, 98, 0.2);
+}
+
+.b-t {
+    border-top: 1px solid;
+    border-color: rgba(100, 98, 98, 0.2);
+}
+
+.b-r {
+    border-right: 1px solid;
+    border-color: rgba(100, 98, 98, 0.2);
+}
+
+.b-b {
+    border-bottom: 1px solid;
+    border-color: rgba(100, 98, 98, 0.2);
+}
+
+/* Modal */
+.modal {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: 10;
+    background-color: rgba(245, 245, 245, 0.5);
+}
+
+/* Flexbox */
+
+@mixin flex-box($justify-content, $align-items) {
+    display: flex;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+
+/* Selection Corlor */
+
+.selection {
+    &__style {
+        ul {
+            padding-left: 0px !important;
+            list-style: none;
+            margin-top: 17px;
+            display: flex;
+        }
+        &--color {
+            li {
+                @include flex-box(center, center);
+                height: 30px;
+                width: 30px;
+                margin-right: 17px;
+                border-radius: 15px;
+                background-color: red;
+                cursor: pointer;
+                &.no-mr {
+                    margin-right: 10px;
+                }
+                i {
+                    color: var(--white-color);
+                }
+            }
+        }
+        &--size {
+            margin-left: -12px;
+            li {
+                font-size: 1.6rem;
+                padding: 12px;
+                cursor: pointer;
+            }
+        }
+    }
+    &--active {
+        display: block;
+    }
+    &--hidden {
+        display: none;
+    }
+}

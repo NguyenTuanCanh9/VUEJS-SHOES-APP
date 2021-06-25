@@ -1,0 +1,114 @@
+/* Nav */
+.nav {
+    height: 245px;
+    margin-top: 75px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #2d00ff;
+    h1 {
+        color: var(--white-color);
+        margin-top: 50px;
+        font-size: 2.6rem;
+        margin-bottom: 0px;
+    }
+    ul {
+        margin-top: 20px;
+        padding-left: 0px;
+        display: flex;
+        list-style: none;
+        align-items: center;
+        align-items: center;
+        li {
+            a {
+                font-size: 1.4rem;
+                padding: 10px;
+                text-decoration: none;
+                color: var(--text-color) !important;
+            }
+            i {
+                color: var(--text-color);
+            }
+        }
+    }
+}
+.disabled {
+    pointer-events: none;
+}
+
+/* Responsive */
+
+@media only screen and (max-width: 600px) {
+    /*Header*/
+    .header {
+        &__left {
+            &--btn {
+                padding-right: 16px !important;
+                &::before {
+                    display: none;
+                }
+            }
+        }
+    }
+    /* Selection */
+    .selection {
+        &--swap {
+            padding: 16px 16px 20px 16px;
+        }
+        &__title {
+            margin-top: 32px;
+        }
+        &__style {
+            margin-bottom: 0px;
+        }
+        &__buy {
+            &--sale {
+                margin-left: 20px;
+            }
+            &--number {
+                margin-left: 20px;
+            }
+            &--wrap {
+                display: block;
+                button {
+                    margin-left: 0px;
+                }
+            }
+            &::after {
+                display: none;
+            }
+        }
+        &__img {
+            &--list {
+                flex-wrap: wrap;
+                &--item {
+                    margin-top: 4px;
+                }
+            }
+        }
+        &__tym {
+            margin-right: 0px;
+        }
+    }
+    /* Detail-review */
+
+    .detail-review {
+        margin-top: 40px;
+        &__wrap {
+            padding: 0px 16px 50px 16px;
+            &--btn {
+                right: 16px;
+            }
+        }
+        &__left {
+            padding-top: 20px;
+        }
+    }
+
+    /* Nav */
+    .nav {
+        h1 {
+            font-size: 2.2rem;
+        }
+    }
+}
